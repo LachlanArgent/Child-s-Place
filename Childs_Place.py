@@ -323,7 +323,7 @@ def dec6():
 
             else:
                 print("Thats not an option. Please try again")
-                dec7()
+                dec6()
                 time.sleep(0.5)
 
         if objIn == "no":
@@ -478,10 +478,6 @@ def dec8():
                 westIn = input("Do you want to investigate this light?Yes or No. ")
                 westIn = westIn.lower()
 
-            else:
-                print("That is not an option. Please try again.")
-                dec8()
-
                 
                 if westIn == "yes":
                     print("You walk towards the light.")
@@ -535,6 +531,19 @@ def dec8():
                         else:
                             print("That is not an option. Please try again.")
                             dec8()
+
+                if westIn == "no":
+                    print("You leave the light and continue walking.")
+                    time.sleep(0.5)
+                    dec9()
+
+                else:
+                    print("That is not an option. Please try again.")
+                    dec8()
+
+            else:
+                print("That is not an option. Please try again.")
+                dec8()
 
     elif travel == "east":
         print("You continue your journey to the east.")
@@ -965,6 +974,7 @@ https://www.asciitohex.com/
         rply()
 
 def ENDg():
+    print()
     time.sleep(0.5)
     print("***************************")
     print("      CONGRATULATIONS      ")
@@ -1074,7 +1084,6 @@ print("""
     under certain conditions; type `show c' for details.
     """)
 time.sleep(2.5)
-
 
 def strtlic():
     print("Press enter to continue")
