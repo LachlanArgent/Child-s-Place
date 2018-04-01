@@ -1,27 +1,25 @@
-import time
-from random import *
+import time  # Imports the time library
+from random import *  # Imports everything from the random library
 #Decision 1
 def dec1():
-    points = 0
-    dec1in = input("Which way do you want to go? Left or Right? ")
-    time.sleep(0.5)
-    dec1in = dec1in.lower()
+    dec1in = input("Which way do you want to go? Left or Right? ")  #get input from user
+    time.sleep(0.5)  #pause the program for 0.5 seconds
+    dec1in = dec1in.lower()  #make the dec1in variable lowercase
     
     if dec1in == "left":
-        points = points + 100
         print("You continue left along a long path")
-        time.sleep(0.5)
-        dec2()
+        time.sleep(0.5) #pause the program for 0.5 seconds
+        dec2()  #sends the user to decision 2
     
 
     elif dec1in == "right":
         print("You walk along a path for a while until you come to a rope bridge")
-        time.sleep(0.5)
-        dec3()
+        time.sleep(0.5) #pause the program for 0.5 seconds
+        dec3()  #sends the user to decision 3
 
 
-    elif dec1in == "up up down down left right left right b a":
-        time.sleep(1)
+    elif dec1in == "up up down down left right left right b a":  #konami code
+        time.sleep(1) #pause the program for 1 second
         print("***************************************************************")
         print("""
 01011001 01001111 01010101 00100000 01000110 01001111
@@ -50,26 +48,35 @@ def dec1():
 
         input()
         easterIn = input("Do you wish to go? Yes or No. ")
-        easterIn = easterIn.lower()
+        easterIn = easterIn.lower()  #makes the easterIn input lowercase
 
-        if easterIn == "1654":
-            time.sleep(0.5)
-            easter()
+        if easterIn == "1654":  #used to confirm the user has decoded the previous binary
+            time.sleep(0.5)  #pauses the program for 0.5 seconds
+            easter()  #sends the user to the easter function
 
         if easterIn == "no":
             time.sleep(0.5)
-            dec1()
-            
+            dec1() #sends the user to the dec1 function
+
+        if easterIn == "yes":
+            time.sleep(0.5)
+            print("")
+            print("It's not that easy. Try decoding the binary.")
+            dec1()  #sends the user to the dec1 function
+
+        else:
+            print("Thats not an option. Please try again")
+            dec1() #sends the user to the dec1 function                  
 
     else:
         print("Thats not an option. Please try again")
-        dec1()
+        dec1() #sends the user to the dec1 function
 
     return None
 
 #Decision 2
 def dec2():
-    print()
+    print() #used to space out the text
     print("You find a chest")
     time.sleep(0.5)
     dec2in = input("Do you want to open the chest? Yes or No. ")
@@ -96,15 +103,15 @@ def dec2():
         print("         (   )      ")
         print("         /   \      ")
         print("         \___/      ")
-        print("")
+        print("")# ascii art has been done in this way for the effect of loading line by line
         dec4()
 
     if dec2in == "no":
-        dec4()
+        dec4() #goes to dec4 function
 
     else:
         print("Thats not an option. Please try again")
-        dec2()
+        dec2() #goes to dec2 function
     
 #Decision 3
 def dec3():
@@ -182,7 +189,6 @@ def dec4():
         dec4()
 #Decision 5
 def dec5():
-    global points
     print()
     print("You continue walking.")
     time.sleep(0.5)
@@ -291,6 +297,10 @@ def dec6():
                 time.sleep(0.5)
                 END()
 
+        else:
+            print("Thats not an option. Please try again")
+            dec6()
+
 
     if route == "right":
         print()
@@ -335,6 +345,10 @@ def dec6():
             print("Thats not an option. Please try again")
             dec6()
             time.sleep(0.5)
+
+    else:
+        print("Thats not an option. Please try again")
+        dec1()
 
 #Decision 7
 def dec7():
@@ -458,7 +472,7 @@ def dec8():
             END()
 
         if "turn" in northIn:
-            print("You turn aroung along the path you came.")
+            print("You turn around along the path you came.")
             time.sleep(0.5)
             print("You arrive at the intersection again.")
             time.sleep(0.5)
@@ -531,6 +545,13 @@ def dec8():
                         else:
                             print("That is not an option. Please try again.")
                             dec8()
+
+                    if torchIn == "no":
+                        print("You leave the torch and continue your journey.")
+
+                    else:
+                        print("Thats not an option. Please try again")
+                        dec1()
 
                 if westIn == "no":
                     print("You leave the light and continue walking.")
@@ -618,6 +639,15 @@ def dec8():
                 else:
                     print("That is not an option. Please try again.")
                     dec8()
+
+            if torchIn == "no":
+                        print("You leave the torch and continue your journey.")
+
+            else:
+                print("Thats not an option. Please try again")
+                dec1()
+
+                
 
         if westIn == "no":
             print("You leave the light and continue walking.")
@@ -757,6 +787,7 @@ def numbero():
         numbero()
 
 def npad():
+        print()
         numpad = input("Enter a 6 digit number: ")
 
         
@@ -771,6 +802,7 @@ The old, rusty door slides open and stops with a clunk.
 The inside of the spaceship is suprisingly clean.
 You walk in. It is dark inside.
 """)
+                time.sleep(2)
                 if torch == 1:
         
                 
@@ -879,8 +911,6 @@ def END():
     time.sleep(0.5)
     print("Intelligence:", intelligence)
     time.sleep(0.5)
-    print("Points:      ", points      )
-    time.sleep(0.5)
     print("Items Collected:")
     if key == 1:
         print("Key")
@@ -965,6 +995,8 @@ https://www.binaryhexconverter.com/binary-to-ascii-text-converter
 https://www.asciitohex.com/
 """)
         time.sleep(3)
+
+        input("Press Enter to Exit.")
         
         exit()
         
@@ -993,8 +1025,6 @@ def ENDg():
     time.sleep(0.5)
     print("Intelligence:", intelligence)
     time.sleep(0.5)
-    print("Points:      ", points      )
-    time.sleep(0.5)
     print("Items Collected:")
     if key == 1:
         print("Key")
@@ -1013,9 +1043,6 @@ def ENDg():
     rply()
 
 health       = 100
-points       = 0
-
-
 
 def start():
     global strength
@@ -1180,93 +1207,101 @@ print("**********************************************************************")
 name = input("NAME: ")
 print("**********************************************************************")
 
-name = name.lower()
-if name == "devrights":
+namel = name.lower()
+if namel == "devrights":
     weapon = "Developer Powers"
     strength = 9999999999
     intelligence = 9999999999
     dec1()
 
-if name == "dev-dec1":
+if namel == "dev-dec1":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec1()
     
-if name == "dev-dec2":
+if namel == "dev-dec2":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec2()
 
-if name == "dev-dec3":
+if namel == "dev-dec3":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec3()
 
-if name == "dev-dec4":
+if namel == "dev-dec4":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec4()
 
-if name == "dev-dec5":
+if namel == "dev-dec5":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec5()
 
-if name == "dev-dec6":
+if namel == "dev-dec6":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec6()
 
-if name == "dev-dec7":
+if namel == "dev-dec7":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec7()
 
-if name == "dev-dec8":
+if namel == "dev-dec8":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec8()
 
-if name == "dev-dec9":
+if namel == "dev-dec9":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec9()
 
-if name == "dev-dec10k0":
+if namel == "dev-dec10k0":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     dec10()
 
-if name == "dev-dec10k1":
+if namel == "dev-dec10k1":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     key = 1
     dec10()
 
-if name == "dev-endg":
+if namel == "dev-dec10k1t1":
+    weapon = "Sword"
+    strength = 1000
+    intelligence = 1000
+    key = 1
+    torch = 1
+    dec10()
+
+if namel == "dev-endg":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     ENDg()
 
-if name == "dev-end":
+if namel == "dev-end":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
     END()
 
-if name == "dev-replay":
+if namel == "dev-replay":
     weapon = "Sword"
     strength = 1000
     intelligence = 1000
