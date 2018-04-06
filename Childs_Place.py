@@ -1,3 +1,5 @@
+# Made By Lachlan Argent
+
 import time  # Imports the time library
 from random import *  # Imports everything from the random library
 #Decision 1
@@ -348,7 +350,7 @@ def dec6():
 
     else:
         print("Thats not an option. Please try again")
-        dec1()
+        dec6()
 
 #Decision 7
 def dec7():
@@ -684,17 +686,17 @@ def dec9():
         time.sleep(0.5)
         dec10()
 
-    if dec9 == "right":
+    if dec9In == "right":
         print("You travel right.")
         time.sleep(0.5)
         print("You see a cave.")
         time.sleep(0.5)
-        print("A monster starts running toward you.")
+        print("A monster starts running towards you.")
         time.sleep(0.5)
 
         m4 = input("Do you want to ATTACK or RUN? ")
         time.sleep(0.5)
-        m3 = m3.lower()
+        m4 = m4.lower()
 
         if m4 == "attack":
             power = randint(750, 1101)
@@ -1047,8 +1049,8 @@ health       = 100
 def start():
     global strength
     global intelligence
-    strength = input("Strength: ")
-    intelligence = input("Intelligence: ")
+    strength = input("Strength (1000 Max): ")
+    intelligence = input("Intelligence (1000 Max): ")
     
     if strength.isdigit():
         if int(strength) > 1000:
